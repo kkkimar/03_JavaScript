@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+}
+
+.deposit-container{
+  width: 500px;
+  height: 500px;
+  border: 3px solid black;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ccc;
+}
+
+.balance-continer{
+  width: 80%;
+  border: 2px solid red;
+  background-color: wheat;
+  padding: 20px;
+}
+
+.balance-continer h1{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-container{
+  margin-top: 20px;
+
+}
+
+.input-containe input{
+  padding: 10px;
+}
+
+.btn-container{
+  margin-top: 30px;
+}
+
+.btn-container>button{
+  font-size: 20px;
+  font-weight: bold;
+}
+
