@@ -34,19 +34,18 @@ function deposit(){
 /* 출금 */
 function withdrawal(){
   const pw = prompt("비밀번호를 입력하세요");
-  
+  const val = Number(amount.value);
+
   if(pw == null){
     alert("취소");
   } else{
     if(pw == password){
       alert("비밀번호 일치");
-      if(amount > balance){
+      if(val > balance){
         alert("출금 금액이 잔액보다 클 수 없습니다");
       }else{
-        const val = Number(amount.value);
-        // alert("OOO원이 출금 되었습니다. 남은 잔액 : OOO원") 출력
-        alert("");
         balance -= val;
+        alert(`${val}원이 출금 되었습니다. 남은 잔액 : ${balance}원`);
         result.innerText = balance;
       }
     }else{
