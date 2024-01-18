@@ -5,14 +5,15 @@
 }
 
 #container{
-  margin: 0 auto;
+  margin: 40px auto;
   width: 1200px;
   display: flex;
   justify-content: space-between;
 }
 
 .box-container{
-  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
   width: 200px;
   height: 200px;
   border: 1px solid black;
@@ -26,6 +27,8 @@
 #input-box{
   width: 100%;
   height: 10%;
+  border: 1px solid black;
+  outline: none;
 }
 
 
