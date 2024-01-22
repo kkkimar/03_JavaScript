@@ -31,6 +31,7 @@ addBtn.addEventListener("click", () => {
 
   // type="number" 추가
   input.setAttribute("type", "number");
+  // == input.type = "number";
   
   // 클래스 "input-number" 추가
   input.classList.add("input-number");
@@ -94,3 +95,16 @@ calcBtn.addEventListener("click", ()=>{
   //4) for문 끝나면 alert로 결과 출력
   alert("결과 : " + sum); 
 });
+
+
+/* 1. 로딩,이벤트 발생 등 시점에 따라서 선택되는 요소가 달라짐 
+
+      * 화면에 처음부터 존재하는 거라면 전역변수
+      이벤트가 발생하고 생기는 것들은 함수 안에 만들기
+      (전역변수는 처음에 화면에 있던 것만 읽어옴)
+
+   2. x버튼처럼 새롭게 만들어지는 요소(동적 추가 요소)에
+      이벤트 추가 방법
+    -> 만들어지는 시점에 이벤트 추가 코드 작성 
+
+*/
