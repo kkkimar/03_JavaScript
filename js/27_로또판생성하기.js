@@ -1,15 +1,51 @@
-/* class가 number인 div 생성 */
-const div = document.createElement("div");
-const numberContiner = document.querySelector("#number-continer")
 
-// div에 클래스 추가
-div.classList.add("number");
+const numberContainer = document.querySelector("#number-container")
+const btn = document.querySelector("#btn")
 
-/* number-continer에 자식 요소로 추가 */
-numberContiner.append(div);
 
-//div innerText로 1~45까지 출력
-for(let i = 1 ; i<46; i++){
+//로또판 생성 버튼 클릭시
+btn.addEventListener("click",()=>{
+
+  if(numberContainer.children.length == 0 ){
+    
+    for(let i = 1 ; i<46; i++){
+      const div = document.createElement("div");
+      div.classList.add("number");
+      div.textContent =i;
+      numberContainer.append(div);
+
+      //6개까지 클릭 + 다시 클릭시 취소
+      div.addEventListener("click",(e)=>{
+        removeSelection(e.target);
+        toggleSelection(e.target);
+      })
+    }
+
+}else{numberContainer.innerHTML=""}
   
-}
+});
 
+
+/**6개까지만 선택 */
+function toggleSelection(count){
+
+  let selectedCount = document.querySelectorAll(".selected").length
+  if(count.classList.contains("selected")){
+    selectedCount++;
+  }
+  if(selectedCount>7){
+    count.classList.remove("selected");
+  }
+
+};
+
+/** 해당태그 클릭하면 클래스 제거 */
+
+function removeSelection(elm){
+  const hasClass = elm.classList.contains("selected");
+  if(hasClass){
+    elm.classList.remove("selected");
+  }else{
+    elm.classList.add("selected");
+  }
+}

@@ -18,7 +18,7 @@
 }
 
 
-#number-continer{
+#number-container{
   width: 90%;
   height: 90%;
   display: flex;
@@ -36,4 +36,9 @@
   font-size: 20px;
   font-weight: bold;
   border: 1px solid #000;
+  cursor: pointer;
+}
+
+.selected{
+  background: coral;
 }
