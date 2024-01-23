@@ -15,13 +15,28 @@ let currInterval ; //인터벌 저장 변수
 
 /* start 버튼 클릭시 10ms 마다 display값(시간) 증가 */
 startBtn.addEventListener("click", e=>{
+  
+  //클릭한 버튼에 작성된 내용이 "PAUSE"인 경우
+  if(e.target.textContent == "PAUSE"){
+    e.target.textContent = "START"; //버튼 변경
+    window.clearInterval(currInterval) //currInterval 인터벌정지
+    return; //addEventListener 호출한 곳이 없어 여기서 끝!
+  }
+
+
+  //클릭한 버튼에 작성된 내용이 "START"인 경우
   currInterval =  window.setInterval(()=>{
-    count++ //count 1증가
+  count++ //count 1증가
   output(); // 화면에 시간 출력    
 
   },10) //10ms
 
-  e.target.disabled = true; //임시
+  e.target.textContent = "PAUSE";
+
+
+
+  // e.target.disabled = true; //임시
+
 });
 
 /* 시계 출력 함수 */
@@ -66,5 +81,46 @@ resetBtn.addEventListener("click",()=>{
   output();
 
   //start 버튼 활성화 ( == 비활성화 안하겠다)
-  startBtn.disabled =false;
+  //startBtn.disabled =false;
+
+  //START 버튼의 내용을 "START"로 변경
+  
+  
+  startBtn.textContent = "START";
+
+  // #recordContainer의 내용 모두 삭제 (== 빈 문자열로 변경!)
+  recordContainer.innerHTML = ""
 })
+
+//recordBtn 클릭시 
+//li 요소 생성
+//li 요소 내용으로 #display에 출련된 시간 얻어와 대입
+//이후 #recordContainer의 첫번째 자식으로 li 추가
+
+recordBtn.addEventListener("click",()=>{
+
+  //li 요소 생성
+  const li = document.createElement("li");
+
+  //li 요소 내용으로 #display에 출련된 시간 얻어와 대입
+  li.innerText = display.innerText;
+
+  // #recordContainer의 첫번째 자식으로 li 추가
+
+  recordContainer.prepend(li);
+
+})
+
+
+
+
+
+
+
+/* 요소.textContent 와 요소.innerText */
+// textContent를 이용해 요소에 작성된 내용 얻어오기
+// -> HTML 파일에 작성된 내용 형태(단, 태그 빼고 ) 그대로 얻어옴
+//   (띄어쓰기, 엔터 포함)
+
+//innerText 이용해 요소에 작성된 내용 얻어오기
+// -> 브라우저 화면에 보이는 형태 (단, 태그 빼고)를 얻어옴
