@@ -20,8 +20,7 @@ btn.addEventListener("click",()=>{
         toggleSelection(e.target);
       })
     }
-
-}else{numberContainer.innerHTML=""}
+  }else{numberContainer.innerHTML=""}
   
 });
 
@@ -35,6 +34,7 @@ function toggleSelection(count){
   }
   if(selectedCount>7){
     count.classList.remove("selected");
+    alert("6개까지만 선택 가능")
   }
 
 };
@@ -42,10 +42,20 @@ function toggleSelection(count){
 /** 해당태그 클릭하면 클래스 제거 */
 
 function removeSelection(elm){
-  const hasClass = elm.classList.contains("selected");
-  if(hasClass){
-    elm.classList.remove("selected");
-  }else{
-    elm.classList.add("selected");
-  }
+  
+  /* 요소.classList.toggle(클래스명) */
+  elm.classList.toggle("selected");
+  
+  // const hasClass = elm.classList.contains("selected");
+  // if(hasClass){
+  //   elm.classList.remove("selected");
+  // }else{
+  //   elm.classList.add("selected");
+  // }
 }
+
+/* 요소.classList.toggle(클래스명)
+   : 요소의 (클래스명)이 있으면 제거 , 없으면 추가
+*/
+
+
