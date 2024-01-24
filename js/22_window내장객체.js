@@ -99,7 +99,7 @@ openPopup3.addEventListener("click", () => {
 });
 //========================================================
 
-/* 팝업청(자식)이 부모창의 값을 읽고/쓰기 */
+/* 팝업창(자식)이 부모창의 값을 읽고/쓰기 */
 const openPopup4 =document.querySelector("#openPopup4");
 
 openPopup4.addEventListener("click",()=>{
