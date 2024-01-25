@@ -44,7 +44,7 @@ function toggleSelection(count){
 function removeSelection(elm){
   
   /* 요소.classList.toggle(클래스명) */
-  elm.classList.toggle("selected");
+  elm.cs
   
   // const hasClass = elm.classList.contains("selected");
   // if(hasClass){
