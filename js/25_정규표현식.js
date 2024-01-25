@@ -34,7 +34,6 @@ inputName.addEventListener("input",e=>{
     nameResult.textContent = "이름 형식이 유효하지 않습니다.";
     nameResult.style.color = "red"
   }
-
 });
 
 

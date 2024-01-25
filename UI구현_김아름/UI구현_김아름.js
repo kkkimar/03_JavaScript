@@ -18,6 +18,7 @@ for(let i=0; i<numberPad.length; i++){
 
 
 //추가버튼 누르면 전화번호 리스트에 번호 추가
+
 addBtn.addEventListener("click",()=>{
   const div = document.createElement("div");
   div.classList.add("numberList");
@@ -36,6 +37,8 @@ addBtn.addEventListener("click",()=>{
   del.classList.add("delete");
   del.innerHTML = "&times;";
 
+
+  //헷갈려서 참고한 부분
   div.append(phonenumber);
   div.append(star);
   div.append(del);
@@ -49,11 +52,12 @@ addBtn.addEventListener("click",()=>{
     parent.remove();
   });
 
-  star.addEventListener("click",()=>{
+  star.addEventListener("click",(e)=>{
     div.classList.toggle("red");
-    if(star.textContent = "★") star.textContent = "☆"
+    star.classList.toggle("star_red")
+    starColor(e.target)
   });
-
+  //☆ ★
 });
 
 
@@ -61,5 +65,13 @@ addBtn.addEventListener("click",()=>{
 //초기화버튼 누르면 초기화
 resetBtn.addEventListener("click",()=>{
   numberDisplay.innerText = "";
-  
 });
+
+function starColor (elm){
+  if(elm.classList.contains("star_red")){
+    elm.textContent = "★";
+  } 
+  else{
+    elm.textContent = "☆";
+  }
+};
