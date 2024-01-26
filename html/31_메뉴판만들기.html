@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴판만들기</title>
+  <link rel="stylesheet" href="../css/31_메뉴판만들기.css">
+</head>
+<body>
+  <section id="container">
+
+    <div class="top_container">
+
+      <div class="top_left">
+        <h4>식당명</h4>
+        <p>(클릭 시 입력창 활성화)</p>
+        <p>(포커스 해제 시 원래대로 돌아옴)</p>
+      </div>
+
+      <div class="top_right">
+        <h2 id="display_res">:<span></span></h2>
+        <!-- input 태그 나중에 none 처리 -->
+        <input type="text" placeholder="식당명을 입력하세요" id="res_name">
+      </div>
+
+    </div>
+
+    <div class="menu_container">
+
+      <ul class="menu_list">
+        <!-- 클릭을 했을시 이전 요소 지우고 새로 만들어 넣음 -->
+        <!-- <li>
+          <input type="checkbox">
+          <input type="text">
+          <input type="number">원
+        </li> -->
+        <li class="menu_item">
+          <span>치즈돈가스</span>
+          <span>10000원</span>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="correction_btn_container">
+      <div id="correction_btn">수정</div>
+    </div>
+   
+
+    <!-- 수정 누르면 추가,삭제,종료 -->
+    <!-- <div class="btn_container">
+      <div class="add_btn">추가</div>
+      <div class="del_btn">삭제</div>
+      <div class="close_btn">종료</div>
+    </div> -->
+
+  </section>
+
+
+
+  <script src="../js/31_메뉴판만들기.js"></script>
+</body>
+</html>
